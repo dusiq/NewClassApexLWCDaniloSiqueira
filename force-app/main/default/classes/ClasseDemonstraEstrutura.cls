@@ -345,6 +345,27 @@ public with sharing class ClasseDemonstraEstrutura {//inicio da classe
         }
     }
 
+    public static void demonstraMap2(){
+        Map<String, Account> contasComCpf = new Map<String, Account>();
+        for(Account vTemp : [SELECT Id, Name, CPF_CNPJ__c FROM Account WHERE CPF_CNPJ__c != '']){
+            system.debug('vtemp '+vtemp);
+            contasComCpf.put(vTemp.CPF_CNPJ__c, vtemp);
+        }
+        system.debug('contasComCpf '+contasComCpf);
+
+        /*
+            contasComCpf {
+                28987241068=Account:{Id=0018c00002ExDT5AAN, Name=Conta DESAFIO 3, CPF_CNPJ__c=28987241068}, 
+                56875327066=Account:{Id=0018c00002ExCnFAAV, Name=Conta 6, CPF_CNPJ__c=56875327066}, 
+                71533936099=Account:{Id=0018c00002ExCufAAF, Name=Conta TESTE DOIS 7, CPF_CNPJ__c=71533936099}}
+        */
+        if(contasComCpf.containsKey('56875327066')){
+            system.debug('contem o cpf');
+        }else{
+            system.debug('não contém o cpf');
+        }
+    }    
+
     //DESAFIO - Receber um número inteiro no parâmetro, e vão criar as contas conforme este número com o nome 'Conta DESAFIO 1', 'Conta DESAFIO 2'; Caso a conta com o nome exista, não deve ser criado, pois não queremos mais de uma conta com o mesmo nome
     public static void insertAccountsDesafioNomeSemMap(Integer quantidadeContas){
         List<Account> accountList = new List<Account>();
