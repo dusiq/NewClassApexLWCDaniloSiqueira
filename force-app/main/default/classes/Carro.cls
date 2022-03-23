@@ -12,7 +12,15 @@ public with sharing class Carro {
     //No motorista vocês devem mandar para o carro o valor da velocidade, porém só pode acelerar se o carro estiver ligado.
     public Boolean acelerar(Integer velocidade){
         //DESAFIO - Verificar se o carro tem ou não gasolina para poder acelerar
-        return velocidade > 0 && velocidade != null && this.ligado && this.temGasolina ? true : false;
+
+        Boolean continua = true;
+        if(this.ligado == null || this.temGasolina == null){
+            continua = false;
+        }else{
+            continua = this.ligado && this.temGasolina;
+        }
+
+        return velocidade > 0 && velocidade != null && continua ? true : false;
     }
   
     /*public Boolean ligarCarro(Boolean ligarCarro){
