@@ -2,7 +2,8 @@
 public class MotoristaTest {
 
     @isTest
-    static void MotoristaTest() {
+    static void testcarrodoMotorista(){
         Motorista.carrodoMotorista();
     }
+    
 }

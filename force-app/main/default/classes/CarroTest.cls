@@ -2,10 +2,10 @@
 public class CarroTest {
 
     @isTest
-    static void testacelerarNaoFunciona() {
+    static void testacelerarNaoFunciona(){
         Carro carro1 = new Carro();
         Boolean acelerou = carro1.acelerar(10);
-        System.assertEquals(acelerou, true);
+        System.assertEquals(acelerou, false);
     }
 
     @isTest

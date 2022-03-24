@@ -38,6 +38,7 @@ public with sharing class Motorista {
             carroOpala.ligarSeta(true);
         }        
         system.debug('opalaLigado '+opalaLigado);*/
-    }    
+    }
+
 
 }
