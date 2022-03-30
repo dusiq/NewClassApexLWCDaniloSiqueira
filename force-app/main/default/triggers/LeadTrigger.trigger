@@ -1,7 +1,7 @@
 trigger LeadTrigger on Lead (before insert, after insert, before update, after update) {
 
     //temos que incluir uma tarefa e associar ao lead
-    if(Trigger.isInsert && Trigger.isBefore){
+    if(Trigger.isInsert && Trigger.isAfter){
         List<Task> taskList = new List<Task>();
         for(Lead lTemp : Trigger.New){
             
