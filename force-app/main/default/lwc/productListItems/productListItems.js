@@ -36,6 +36,7 @@ export default class ProductListItems extends LightningElement {
         getProducts({filter : this.filter, pageNumber : this.pageNumber}).then( (response) => {
             console.log('response getProducts', response);
             this.productsObj = response;
+            console.log('response productsObj', this.productsObj);
         }).catch((error) => {
             console.log('ERRO AO BUSCAR PRODUTOS', error);
         });
